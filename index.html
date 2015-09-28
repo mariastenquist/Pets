@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-orange.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   	<link rel="stylesheet" type="text/css" href="main.css">
+ </head>
 
-  </head>
 <body ng-controller="mainController">
 
 <!-- Header -->
@@ -33,9 +33,9 @@
         <a class="mdl-navigation__link" href="">Sign In</a>
       </nav>
       		<div> 
-				<i class="icon icon-twitter icon-lg"></i> 
-				<i class="icon icon-facebook-square icon-lg"></i> 
-				<i class="icon icon-google-plus-square icon-lg"></i> 
+				<i class="icon icon-twitter icon-2x"></i> 
+				<i class="icon icon-facebook-square icon-2x"></i> 
+				<i class="icon icon-google-plus-square icon-2x"></i> 
 			</div>
     </div>
   </header>
@@ -65,57 +65,84 @@
 
 <!--   COLUMN 1: LEFT -->
   	<div class="mdl-cell mdl-cell--4-col">Content Column1 
-  				<p> The standard Lorem Ipsum passage, used since the 1500s
+	<input ng-model="filterAnimal">
 
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
-			<div>
-				<h2>{{hello}}</h2>
-  			</div>
-  	</div>
+	<select ng-model="filterAnimal">
+		<option>Dog</option>
+		<option>Cat</option>
+		<option>No-Fur-Allowed</option>
+		<option>Reptiles</option>
+
+
+
+	</select>
+  			<p> 
+
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
+		<div>
+			<h3>{{hello}}</h3>
+  		</div>
+
+  		  <div class="demo-card-wide mdl-card mdl-shadow--2dp" ng-repeat="user in usersList | filter: filterAnimal">
+		  <div class="mdl-card__title generalHeader" style="background: url({{user.foto}}) center / cover;">
+		    <h2 class="mdl-card__title-text">{{user.name}}</h2>
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		    <h3>{{user.type}}</h3>
+		    {{user.tagLine}}	
+		  </div>
+		  <div class="mdl-card__actions mdl-card--border">
+		    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="">
+		      View Profile
+		    </a>
+		  </div>
+		  <div class="mdl-card__menu">
+		    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+		      <i class="material-icons" ng-click="">share</i>
+		    </button>
+		  </div>
+		</div>
+		<!--   <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		  <div class="mdl-card__title catHeader1">
+		    <h2 class="mdl-card__title-text">Lily</h2>
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		    Hi! My name is Lily! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am! 
+		  </div>
+		  <div class="mdl-card__actions mdl-card--border">
+		    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+		      View Profile
+		    </a>
+		  </div>
+		  <div class="mdl-card__menu">
+		    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+		      <i class="material-icons">share</i>
+		    </button>
+		  </div>
+		</div> -->
+
+</div>
 
 
 <!--   COLUMN 2: MIDDLE -->
 
   <div class="mdl-cell mdl-cell--4-col">Content Column2 
 
-    <p> The standard Lorem Ipsum passage, used since the 1500s
+    <p>
+		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-
-
-	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Rocko</h2>
-  </div>
-  <div class="mdl-card__supporting-text">
-    Hi! My name is Rocko! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am, and maybe you and my owner can meet at the dog park and I can meet you and see how awesome you are! Bring your pet and then he and I can be friends...
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      View Profile
-    </a>
-  </div>
-  <div class="mdl-card__menu">
-    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-      <i class="material-icons">share</i>
-    </button>
-  </div>
-</div>
-
-  </div>
+  </div>  <!-- closes content for column 2 -->
 
   <!--   COLUMN 3: RIGHT -->
 
   <div class="mdl-cell mdl-cell--4-col">Content Column3 
 
-    <p> The standard Lorem Ipsum passage, used since the 1500s
-
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
+    <p>
+		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 
 	<div>
 		<img class="logo" src="./images/greenMammal.png">
+			<img class="logo" src="./images/blueTail.png">
 	</div>
 
 	<div>
@@ -123,8 +150,59 @@
 		<mdl-spinner single-color="true"></mdl-spinner>		
 	</div>
 
-  </div>
 
+		<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		  <div class="mdl-card__title dogHeader1">
+		    <h2 class="mdl-card__title-text">Rocko</h2>
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		    Hi! My name is Rocko! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am, and maybe you and my owner can meet at the dog park and I can meet you and see how awesome you are! Bring your pet and then he and I can be friends...
+		  </div>
+		  <div class="mdl-card__actions mdl-card--border">
+		    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+		      View Profile
+		    </a>
+		  </div>
+		  <div class="mdl-card__menu">
+		    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+		      <i class="material-icons">share</i>
+		    </button>
+		  </div>
+		</div>
+
+
+			<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		  <div class="mdl-card__title dogHeader2">
+		    <h2 class="mdl-card__title-text">Fido</h2>
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		    Hi! My name is Fido! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am, and maybe you and my owner can meet at the dog park and I can meet you and see how awesome you are! Bring your pet and then he and I can be friends...
+		  </div>
+		  <div class="mdl-card__actions mdl-card--border">
+		    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+		      View Profile
+		    </a>
+		  </div>
+		  <div class="mdl-card__menu">
+		    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+		      <i class="material-icons">share</i>
+		    </button>
+		  </div>
+		</div>
+  </div>  <!-- this closes COLUMN 3! -->
+
+
+<!-- Footer -->
+ <footer class="mdl-mini-footer mainFooter">
+  <div class="mdl-mini-footer__left-section">
+    <div class="mdl-logo">Tail</div>
+    <ul class="mdl-mini-footer__link-list">
+      <li><a href="#">Help</a></li>
+      <li><a href="#">Profiles</a></li>
+      <li><a href="#">Connect</a></li>
+    </ul>
+  </div>
+</footer>
 
 
 </div> <!-- this closes the GRID  -->

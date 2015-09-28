@@ -1,20 +1,14 @@
 .demo-layout-transparent {
   background: url("./images/dog1.jpg") center / cover;
-  
+ /* background-attachment: scroll;*/  
 }
+
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button {
   color: gray;
 }
 
-.wrapper{
-	/*position: relative;*/
-}
-
 .logo{
-/*	top: 50px;
-	margin: 50px;
-	position: absolute;*/
 	height: 150px;
 	width: 150px;
 }
@@ -28,11 +22,36 @@
 .demo-card-wide.mdl-card {
   width: 512px;
 }
-.demo-card-wide > .mdl-card__title {
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+.dogHeader1{
   color: #fff;
   height: 176px;
   background: url('./images/dog6.jpg') center / cover;
 }
-.demo-card-wide > .mdl-card__menu {
+.generalHeader{
   color: #fff;
+  height: 250px;
 }
+
+.catHeader1 {
+  color: #fff;
+  height: 176px;
+  background: url('./images/cat2.jpg') center / cover;
+}
+
+.dogHeader2 {
+  color: #fff;
+  height: 176px;
+  background: url('./images/dog7.jpg') center / cover;
+
+
+.mainFooter{
+	border-radius: 8px;
+	color: white;
+}
+
+
+
