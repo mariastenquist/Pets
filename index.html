@@ -1,56 +1,137 @@
 <!DOCTYPE html>
-<html ng-app="myApp" lang="en">
+<html ng-app='petApp' lang="en">
 <head>
   <meta charset="utf-8">
   <title>Tail</title>
-  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-orange.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+	<script type="text/javascript" src="angular-material-design-lite.min.js"></script>
 	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+	<script src="https://use.fonticons.com/1729dfc4.js"></script>
+	
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-orange.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   	<link rel="stylesheet" type="text/css" href="main.css">
 
+  </head>
+<body ng-controller="mainController">
 
-
-</head>
-<body>
-
-
-
+<!-- Header -->
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
   <header class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row">
+
+
       <!-- Title -->
-      <span class="mdl-layout-title">Title</span>
+      <span class="mdl-layout-title">Tail Navigation</span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation -->
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">About</a>
+        <a class="mdl-navigation__link" href="">Profiles</a>
+        <a class="mdl-navigation__link" href="">Contact</a>
+        <a class="mdl-navigation__link" href="">Sign In</a>
       </nav>
+      		<div> 
+				<i class="icon icon-twitter icon-lg"></i> 
+				<i class="icon icon-facebook-square icon-lg"></i> 
+				<i class="icon icon-google-plus-square icon-lg"></i> 
+			</div>
     </div>
   </header>
+
+<!-- Drawer -->
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Title</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">About</a>
+      <a class="mdl-navigation__link" href="">Profiles</a>
+      <a class="mdl-navigation__link" href="">Contact</a>
+      <a class="mdl-navigation__link" href="">Sign In</a>
     </nav>
+    	<div> 
+				<i class="icon icon-twitter icon-lg"></i> 
+				<i class="icon icon-facebook-square icon-lg"></i> 
+				<i class="icon icon-google-plus-square icon-lg"></i> 
+		</div>
   </div>
-  <main class="mdl-layout__content">
-  </main>
+
+  <!-- main content -->
+
+
+<main class="mdl-layout__content">
+
+  <div class="mdl-grid">
+
+<!--   COLUMN 1: LEFT -->
+  	<div class="mdl-cell mdl-cell--4-col">Content Column1 
+  				<p> The standard Lorem Ipsum passage, used since the 1500s
+
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
+			<div>
+				<h2>{{hello}}</h2>
+  			</div>
+  	</div>
+
+
+<!--   COLUMN 2: MIDDLE -->
+
+  <div class="mdl-cell mdl-cell--4-col">Content Column2 
+
+    <p> The standard Lorem Ipsum passage, used since the 1500s
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+
+
+	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Rocko</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Hi! My name is Rocko! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am, and maybe you and my owner can meet at the dog park and I can meet you and see how awesome you are! Bring your pet and then he and I can be friends...
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      View Profile
+    </a>
+  </div>
+  <div class="mdl-card__menu">
+    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+      <i class="material-icons">share</i>
+    </button>
+  </div>
 </div>
 
+  </div>
 
-	
+  <!--   COLUMN 3: RIGHT -->
+
+  <div class="mdl-cell mdl-cell--4-col">Content Column3 
+
+    <p> The standard Lorem Ipsum passage, used since the 1500s
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+
+	<div>
+		<img class="logo" src="./images/greenMammal.png">
+	</div>
+
+	<div>
+		<mdl-spinner></mdl-spinner>
+		<mdl-spinner single-color="true"></mdl-spinner>		
+	</div>
+
+  </div>
 
 
 
+</div> <!-- this closes the GRID  -->
+</main> <!-- closes main mdl layout content -->
+</div>   <!-- closes the demo-mdl layout outer div!! -->
 
 
-	<script src="main.js"></script>
+ 	<script src="main.js"></script>
 </body>
 </html>
