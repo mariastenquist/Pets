@@ -1,6 +1,6 @@
 .demo-layout-transparent {
-  background: url("./images/dog1.jpg") center / cover;
- /* background-attachment: scroll;*/  
+  background: url("./images/dog1.jpg") center / cover;  
+ /*opacity: .5;*/
 }
 
 .demo-layout-transparent .mdl-layout__header,

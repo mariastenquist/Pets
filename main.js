@@ -1,7 +1,3 @@
-// $(document).on('ready', function() { 
-// });
-  		// <script src="https://use.fonticons.com/1729dfc4.js"></script>
-
 
 angular.module('petApp', ['mdl']);
 
