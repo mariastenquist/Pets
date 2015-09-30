@@ -1,5 +1,6 @@
 .demo-layout-transparent {
   background: url("./images/dog1.jpg") center / cover;  
+  position: relative;
  /*opacity: .5;*/
 }
 
@@ -11,6 +12,7 @@
 .logo{
 	height: 150px;
 	width: 150px;
+
 }
 
 .icon{
@@ -26,16 +28,16 @@
   color: #fff;
 }
 
-.dogHeader1{
+/*.dogHeader1{
   color: #fff;
   height: 176px;
   background: url('./images/dog6.jpg') center / cover;
-}
+}*/
 .generalHeader{
   color: #fff;
   height: 250px;
 }
-
+/*
 .catHeader1 {
   color: #fff;
   height: 176px;
@@ -45,7 +47,7 @@
 .dogHeader2 {
   color: #fff;
   height: 176px;
-  background: url('./images/dog7.jpg') center / cover;
+  background: url('./images/dog7.jpg') center / cover;*/
 
 
 .mainFooter{
@@ -53,5 +55,28 @@
 	color: white;
 }
 
+.light{
+  height: 200px;
+  width: 200px;
+}
 
-
+.data-lightbox{
+  height:200px;
+  width: 200px;
+}
+.popUpLightbox{
+  position: relative;
+  top: 15%;
+  z-index: 10;
+  left: 25%;
+}
+.lightbox-card-wide.mdl-card {
+  width: 50%;
+}
+.shadowLightbox{
+  position: absolute;
+  background-color: gray;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+}
