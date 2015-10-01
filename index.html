@@ -5,55 +5,89 @@
   <title>Tail</title>
 
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
   	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-orange.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   	<link href="lightbox2-master/dist/css/lightbox.css" rel="stylesheet">
   	<script src="https://use.fonticons.com/1729dfc4.js"></script>
-
-
-
   	<link rel="stylesheet" type="text/css" href="main.css">
  </head>
 
+
 <body ng-controller="mainController">
 
-	<!-- Header -->
-	<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+	<!-- ============================= showLightbox ================================ -->
 		<div ng-show="showLightbox"class="shadowLightbox">
 			<div class="lightbox-card-wide mdl-card mdl-shadow--2dp popUpLightbox">
 			  <div class="mdl-card__title">
-			    <h2 class="mdl-card__title-text">{{selectedAnimalName}}</h2>
-
+			    <h2 class="mdl-card__title-text">Profile
+			  	<br>{{selectedAnimalName}}</h2>
 			  </div>
 			  <div class="mdl-card__supporting-text">
+
 			    {{selectedAnimalTag}}
 			  </div>
+			  <!-- <div> -->
+			  <!-- {{selectedAnimalFoto}} -->
+			 <!-- <style="background: url({{selectedAnimalFoto}})"> -->
+			<!-- </div> -->
+
+		<!-- 	  FORM -->
 			  <form action="#">
 			    <div class="mdl-textfield mdl-js-textfield">
 			      <input class="mdl-textfield__input" type="text" id="sample1" />
-			      <label class="mdl-textfield__label" for="sample1">Text...</label>
+			      <label class="mdl-textfield__label" for="sample1">Enter a story...</label>
 			    </div>
 			  </form>
 			  <div class="mdl-card__actions mdl-card--border">
 			    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="toggleLightBox()">
 			      Close
 			    </a>
-
 			  </div>
 			  <div class="mdl-card__menu">
 			    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-			      <i class="material-icons">share</i>
+		      <i class="material-icons">share</i>
 			    </button>
 			  </div>
 			</div>
 		</div>
 
+	<!-- ============================= showLightboxForm ================================ -->
+		<div ng-show="showLightboxForm" class="shadowLightbox">
+			<div class="lightbox-card-wide mdl-card mdl-shadow--2dp popUpLightbox">
+			  <div class="mdl-card__title">
+			    <h2 class="mdl-card__title-text">{{selectedAnimalName}}</h2>
+			  </div>
+			  <div class="mdl-card__supporting-text"> {{selectedAnimalText}} 
+			  {{bio}}
+			  </div>
+			  	Form 
+			  	<br>
+
+		<!-- 	  FORM -->
+			  <form action="#">
+			    <div class="mdl-textfield mdl-js-textfield">
+			      <input class="mdl-textfield__input" type="text" id="sample1" />
+			      <label class="mdl-textfield__label" for="sample1">Enter a story...</label>
+			    </div>
+			  </form>
+			  <div class="mdl-card__actions mdl-card--border">
+			    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="toggleLightBoxForm()">
+			      Close
+			    </a>
+			  </div>
+			  <div class="mdl-card__menu">
+			    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+		      <i class="material-icons">share</i>
+			    </button>
+			  </div>
+			</div>
+		</div>
+		    <!-- Title -->
+
 	  <header class="mdl-layout__header mdl-layout__header--transparent">
 	    <div class="mdl-layout__header-row">
-
-
-	      <!-- Title -->
 	      <span class="mdl-layout-title">Tail Navigation</span>
 	      <!-- Add spacer, to align navigation to the right -->
 	      <div class="mdl-layout-spacer"></div>
@@ -97,28 +131,25 @@
 	  <div class="mdl-grid">
 
 	<!--   COLUMN 1: LEFT -->
-	  	<div class="mdl-cell mdl-cell--4-col">Select User Type
-		<input ng-model="filterAnimal">Type
+	  	<div class="mdl-cell mdl-cell--6-col">Select User Type
+		<input ng-model="filterAnimal">Animal Type
+		
+		<select ng-change="checkFilter()" ng-model="filterAnimal">
+			<option value="dog">dog</option>
+			<option value="cat">cat</option>
+			<option value="non-furry">non-furry</option>
 
-		<select ng-model="filterAnimal">
-			<option>Dog</option>
-			<option>Cat</option>
-			<option>non-furry</option>
-			<!-- <option>Reptiles</option> -->
+		<!-- <select ng-model="myColor" ng-options="color.name for color in colors"> -->
+		<!-- <select ng-model="filterAnimal"  ng-options="user.types group by user.types for user in usersList">
+		 -->
 		</select>
 
-	  			<p> 
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
-			<div>
-				<h4>{{hello}}</h4>
-	  		</div>
-
-	  		  <div class="demo-card-wide mdl-card mdl-shadow--2dp" ng-repeat="user in usersList | filter: filterAnimal">
+	  		  <div class="demo-card-wide mdl-card mdl-shadow--2dp" ng-repeat="user in usersList | filter: {types : filterAnimal}">
 			  <div class="mdl-card__title generalHeader" style="background: url({{user.foto}}) center / cover;">
 			    <h2 class="mdl-card__title-text">{{user.name}}</h2>
 			  </div>
 			  <div class="mdl-card__supporting-text">
-			    <h5>{{user.type}}</h5>
+			    <h6>{{user.types}}</h6>
 			    {{user.tagLine}}	
 			  </div>
 			  <div class="mdl-card__actions mdl-card--border">
@@ -128,18 +159,11 @@
 			    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="selectedAnimal($index)">
 			      View Profile
 			    </a>
-			    <a href="./images/dog7.jpg" data-lightbox="profile-1" data-title="My caption">Animal</a>
-			    	 
-			    <!-- 	 ng-click="showLightBox" -->
-			 <!--    <div class="active-paws" ng-repeat="paw in pawsArray">
-			 	<img src="./images/drawing.png">
-			    <span>{{paw}}</span>
-			    </div> -->
 
 			  </div>
 			  <div class="mdl-card__menu">
-			    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-			      <i class="material-icons" ng-click="">share</i>
+			    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" ng-click="selectedAnimalForm($index)"> 
+			      <i class="material-icons">edit</i>
 			    </button>
 			  </div>
 			</div>
@@ -158,66 +182,24 @@
 
 	  <!--   COLUMN 3: RIGHT -->
 
-	  <div class="mdl-cell mdl-cell--4-col">Content Column3 
+	  <div class="mdl-cell mdl-cell--2-col">Content Column3 
 
 	    <p>
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+			"This column is a section that gives a description of the Tail community and what we are about! Tail is a platform to showcase the awesome adventures of pets and their petowners. The focus is on pets, and here pets are in charge. There is a section for pet owners to meet in real life, and have their super cool pets mingle too. Come check out our awesome paw-stars! "</p>
+
+					<p> 
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
 
 		<div>
 			<img class="logo" src="./images/greenMammal.png">
 				<img class="logo" src="./images/blueTail.png">
 		</div>
 
-		<div>
+		<!-- <div>
 			<mdl-spinner></mdl-spinner>
 			<mdl-spinner single-color="true"></mdl-spinner>		
-		</div>
+		</div> -->
 
-
-			<!-- <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-			  <div class="mdl-card__title dogHeader1">
-			    <h2 class="mdl-card__title-text">Rocko</h2>
-			  </div>
-			  <div class="mdl-card__supporting-text">
-			    Hi! My name is Rocko! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am, and maybe you and my owner can meet at the dog park and I can meet you and see how awesome you are! Bring your pet and then he and I can be friends...
-			  </div>
-			  <div class="mdl-card__actions mdl-card--border">
-			    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-			      View Profile
-			    </a>
-			  </div>
-			  <div class="mdl-card__menu">
-			    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-			      <i class="material-icons">share</i>
-			    </button>
-			  </div>
-			</div>
-
-
-				<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-			  <div class="mdl-card__title dogHeader2">
-			    <h2 class="mdl-card__title-text">Fido</h2>
-			  </div>
-			  <div class="mdl-card__supporting-text">
-			    Hi! My name is Fido! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am, and maybe you and my owner can meet at the dog park and I can meet you and see how awesome you are! Bring your pet and then he and I can be friends...
-			  </div>
-			  <div class="mdl-card__actions mdl-card--border">
-			    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-			      View Profile
-			    </a>
-			  </div>
-			  <div class="mdl-card__menu">
-			    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-			      <i class="material-icons">share</i>
-			    </button>
-			  </div>
-			</div> -->
-
-
-	<!-- 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-	  <textarea class="mdl-textfield__input" type="text" rows= "1" id="schools"></textarea>
-	  <label class="mdl-textfield__label" for="schools">Schools attended</label>
-	</div> -->
 
 	  </div>  <!-- this closes COLUMN 3! -->
 
@@ -236,13 +218,9 @@
 	  </div>
 	</footer>
 
-
-
-
-
-	</div> <!-- this closes the GRID  -->
+		</div> <!-- this closes the GRID  -->
 	</main> <!-- closes main mdl layout content -->
-	</div>   <!-- closes the demo-mdl layout outer div!! -->
+</div>   <!-- closes the demo-mdl layout outer div!! -->
 
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
