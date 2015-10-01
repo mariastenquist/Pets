@@ -22,7 +22,9 @@
 
 
 .demo-card-wide.mdl-card {
-  width: 600px;
+  width: auto;
+  max-width: 750px;
+  min-width:100px;
 }
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
@@ -37,18 +39,6 @@
   color: #fff;
   height: 300px;
 }
-/*
-.catHeader1 {
-  color: #fff;
-  height: 176px;
-  background: url('./images/cat2.jpg') center / cover;
-}
-
-.dogHeader2 {
-  color: #fff;
-  height: 176px;
-  background: url('./images/dog7.jpg') center / cover;*/
-
 
 .mainFooter{
 	border-radius: 8px;
@@ -61,10 +51,6 @@
   width: 200px;
 }
 
-/*.data-lightbox{
-  height:200px;
-  width: 200px;
-}*/
 .popUpLightbox{
   position: relative;
   top: 15%;
@@ -72,8 +58,17 @@
   left: 25%;
 
 }
+
+/*.popUpLightbox.ng-enter,
+.popUpLightbox.ng-move,
+.popUpLightbox.ng-leave {
+  transition: all 2s ease;
+}
+*/
+
 .lightbox-card-wide.mdl-card {
   width: 50%;
+  min-height: 300px;
 
 }
 .shadowLightbox{
@@ -96,4 +91,30 @@
   background-color: grey;
   height: auto;
   opacity: .5;
+}
+
+.mdl-textfield__input{
+  text-align: center;
+  padding: 15px;
+
+}
+
+.intro{
+  background-color: #f4b415;
+  border-radius: 10px;
+}
+
+.logo1{
+  height: 95px;
+  width: 95px;
+  padding: 15px;
+}
+.logo2{
+  height:75px;
+  width: 75px;
+  padding: 10px;
+}
+
+.type{
+  color: grey;  
 }

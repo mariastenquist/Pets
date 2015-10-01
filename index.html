@@ -5,12 +5,14 @@
   <title>Tail</title>
 
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
-  	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-orange.min.css">
+  	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.orange-light_blue.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   	<link href="lightbox2-master/dist/css/lightbox.css" rel="stylesheet">
   	<script src="https://use.fonticons.com/1729dfc4.js"></script>
-  	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <!-- 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> -->
+  	<link rel="stylesheet" href="animate.css">
   	<link rel="stylesheet" type="text/css" href="main.css">
+
  </head>
 
 
@@ -27,7 +29,6 @@
 			  	<br>{{selectedAnimalName}}</h2>
 			  </div>
 			  <div class="mdl-card__supporting-text">
-
 			    {{selectedAnimalTag}}
 			  </div>
 			  <!-- <div> -->
@@ -64,7 +65,6 @@
 			  <div class="mdl-card__supporting-text"> {{selectedAnimalText}} 
 			  {{bio}}
 			  </div>
-			  	Form 
 			  	<br>
 
 		<!-- 	  FORM -->
@@ -74,11 +74,11 @@
 			      <label class="mdl-textfield__label" for="sample1">Enter a story...</label>
 			    </div>
 			  </form>
-			  <div class="mdl-textfield mdl-js-textfield">
-  <textarea class="mdl-textfield__input" type="text" rows="5" maxrows="15"
-   id="pet"></textarea>
-  <label class="mdl-textfield__label" for="pet">Enter your pet's story....</label>
-</div>
+			  	<div class="mdl-textfield mdl-js-textfield">
+  				<textarea class="mdl-textfield__input" type="text" rows="5" maxrows="15"
+   					id="pet"></textarea>
+  				<label class="mdl-textfield__label" for="pet">Enter your pet's story....</label>
+				</div>
 					<!-- 		  	<div>
 						<form class="pure-form">
 				    <fieldset class="pure-group">
@@ -123,15 +123,16 @@
 	      		<div> 
 					<i class="icon icon-twitter icon-2x"></i> 
 					<i class="icon icon-facebook-square icon-2x"></i> 
-					<i class="icon icon-google-plus-square icon-2x"></i> 
-
+					<i class="icon icon-google-plus-square icon-2x"></i>
+					<img class="logo2" src="./images/blueTail.png"> 
 				</div>
 	    </div>
 	  </header>
 
 	<!-- Drawer -->
 	  <div class="mdl-layout__drawer">
-	    <span class="mdl-layout-title">Title</span>
+	    <span class="mdl-layout-title"><img class="logo1" src="./images/blueTail.png"></span>
+
 	    <nav class="mdl-navigation">
 	      <a class="mdl-navigation__link" href="">About</a>
 	      <a class="mdl-navigation__link" href="">Profiles</a>
@@ -150,8 +151,21 @@
 
 	<main class="mdl-layout__content">
 
-	  <div class="mdl-grid">
+		<div class="lightbox-card-wide mdl-card mdl-shadow--2dp popUpLightbox intro animated rotateInDownLeft" ng-show="showIntro">
+			  	<div class="mdl-card__title">
+			  	</div>
+				<div class="mdl-card__supporting-text">
+						<h3>Welcome to the Tail Community! <img class="logo" src="./images/blueTail.png"></h3>
+						<p>"Do you love pets? Then you've come to the right spot! Come browse our lovable pets and read about their stories! Make friends, mingle, and take part in showcasing your pet. Here, pets are stars!"</p>
+						<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" ng-click="toggleintroLandingPage()">
+		  					<i class="material-icons">remove circle</i>
+						</button>
+						<!-- <img background: url("./images/dog1.jpg") center / cover;></img> -->
+				</div>
+		</div>
 
+
+	  <div class="mdl-grid">
 	<!--   COLUMN 1: LEFT -->
 	  	<div class="mdl-cell mdl-cell--6-col">Select User Type
 		<input ng-model="filterAnimal">Animal Type
@@ -171,7 +185,7 @@
 			    <h2 class="mdl-card__title-text">{{user.name}}</h2>
 			  </div>
 			  <div class="mdl-card__supporting-text">
-			    <h6>{{user.types}}</h6>
+			    <h6 class="type">{{user.types}}</h6>
 			    {{user.tagLine}}	
 			  </div>
 			  <div class="mdl-card__actions mdl-card--border">
@@ -222,11 +236,7 @@
 			<mdl-spinner single-color="true"></mdl-spinner>		
 		</div> -->
 
-
 	  </div>  <!-- this closes COLUMN 3! -->
-
-
-
 
 	<!-- Footer -->
 	 <footer class="mdl-mini-footer mainFooter">
@@ -238,6 +248,12 @@
 	      <li><a href="#">Connect</a></li>
 	    </ul>
 	  </div>
+	  			<div> 
+					<i class="icon icon-twitter icon-2x"></i> 
+					<i class="icon icon-facebook-square icon-2x"></i> 
+					<i class="icon icon-google-plus-square icon-2x"></i> 
+
+				</div>
 	</footer>
 
 		</div> <!-- this closes the GRID  -->
@@ -246,6 +262,7 @@
 
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-animate.js"></script>
 	<script type="text/javascript" src="angular-material-design-lite.min.js"></script>
 	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
  	<script src="main.js"></script>
