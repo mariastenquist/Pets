@@ -91,3 +91,9 @@
   height: auto;
   opacity: .5;
 }
+
+.mdl-cell.mdl-cell--4-col {
+  background-color: grey;
+  height: auto;
+  opacity: .5;
+}

@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   	<link href="lightbox2-master/dist/css/lightbox.css" rel="stylesheet">
   	<script src="https://use.fonticons.com/1729dfc4.js"></script>
+  	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   	<link rel="stylesheet" type="text/css" href="main.css">
  </head>
 
@@ -17,6 +18,7 @@
 
 
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+
 	<!-- ============================= showLightbox ================================ -->
 		<div ng-show="showLightbox"class="shadowLightbox">
 			<div class="lightbox-card-wide mdl-card mdl-shadow--2dp popUpLightbox">
@@ -33,7 +35,7 @@
 			 <!-- <style="background: url({{selectedAnimalFoto}})"> -->
 			<!-- </div> -->
 
-		<!-- 	  FORM -->
+	
 			  <form action="#">
 			    <div class="mdl-textfield mdl-js-textfield">
 			      <input class="mdl-textfield__input" type="text" id="sample1" />
@@ -72,7 +74,27 @@
 			      <label class="mdl-textfield__label" for="sample1">Enter a story...</label>
 			    </div>
 			  </form>
-			  <div class="mdl-card__actions mdl-card--border">
+			  <div class="mdl-textfield mdl-js-textfield">
+  <textarea class="mdl-textfield__input" type="text" rows="5" maxrows="15"
+   id="pet"></textarea>
+  <label class="mdl-textfield__label" for="pet">Enter your pet's story....</label>
+</div>
+					<!-- 		  	<div>
+						<form class="pure-form">
+				    <fieldset class="pure-group">
+				        <input type="text" class="pure-input-1-2" placeholder="Username">
+				        <input type="text" class="pure-input-1-2" placeholder="Password">
+				        <input type="email" class="pure-input-1-2" placeholder="Email">
+				    </fieldset>
+
+				    <fieldset class="pure-group">
+				        <input type="text" class="pure-input-1-2" placeholder="A title">
+				        <textarea class="pure-input-1-2" placeholder="Textareas work too"></textarea>
+				    </fieldset>
+				    </form>
+				    </div>
+							 -->  
+			<div class="mdl-card__actions mdl-card--border">
 			    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="toggleLightBoxForm()">
 			      Close
 			    </a>
@@ -187,8 +209,8 @@
 	    <p>
 			"This column is a section that gives a description of the Tail community and what we are about! Tail is a platform to showcase the awesome adventures of pets and their petowners. The focus is on pets, and here pets are in charge. There is a section for pet owners to meet in real life, and have their super cool pets mingle too. Come check out our awesome paw-stars! "</p>
 
-					<p> 
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
+				<!-- 	<p> 
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p> -->
 
 		<div>
 			<img class="logo" src="./images/greenMammal.png">
