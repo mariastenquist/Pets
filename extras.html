@@ -1,103 +1,79 @@
+<!DOCTYPE html>
+<html ng-app='petApp' lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Extras</title>
+  	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.orange-light_blue.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  	<link href="lightbox2-master/dist/css/lightbox.css" rel="stylesheet">
+  	<script src="https://use.fonticons.com/1729dfc4.js"></script>
+  	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  	<link rel="stylesheet" type="text/css" href="main.css">
 
-
-			<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-			  <div class="mdl-card__title dogHeader1">
-			    <h2 class="mdl-card__title-text">Rocko</h2>
-			  </div>
-			  <div class="mdl-card__supporting-text">
-			    Hi! My name is Rocko! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am, and maybe you and my owner can meet at the dog park and I can meet you and see how awesome you are! Bring your pet and then he and I can be friends...
-			  </div>
-			  <div class="mdl-card__actions mdl-card--border">
-			    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-			      View Profile
-			    </a>
-			  </div>
-			  <div class="mdl-card__menu">
-			    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-			      <i class="material-icons">share</i>
-			    </button>
-			  </div>
-			</div>
-
-
-				<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-			  <div class="mdl-card__title dogHeader2">
-			    <h2 class="mdl-card__title-text">Fido</h2>
-			  </div>
-			  <div class="mdl-card__supporting-text">
-			    Hi! My name is Fido! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am, and maybe you and my owner can meet at the dog park and I can meet you and see how awesome you are! Bring your pet and then he and I can be friends...
-			  </div>
-			  <div class="mdl-card__actions mdl-card--border">
-			    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-			      View Profile
-			    </a>
-			  </div>
-			  <div class="mdl-card__menu">
-			    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-			      <i class="material-icons">share</i>
-			    </button>
-			  </div>
-			</div>
-
-
-	<!-- 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-	  <textarea class="mdl-textfield__input" type="text" rows= "1" id="schools"></textarea>
-	  <label class="mdl-textfield__label" for="schools">Schools attended</label>
-	</div> -->
-
-
-		 <!--    <a href="./images/dog7.jpg" data-lightbox="profile-1" data-title="My caption">Animal</a> -->
-			    	 
-			    <!-- 	 ng-click="showLightBox" -->
-			 <!--    <div class="active-paws" ng-repeat="paw in pawsArray">
-			 	<img src="./images/drawing.png">
-			    <span>{{paw}}</span>
-			    </div> -->
-<!-- 
-			    <div>
-				<h4>{{hello}}</h4>
-	  		</div> -->
-
-	// $scope.editProfile = function($event){
-		// 	$scope.showProfileEdit = false;
-		// }
-
-
-
-	// var animalTypes = ["dog", "cat", "non-furry", "non-furry", "cat", "dog", "dog", "dog", "dog"]
+ </head>
 
 
 
 
-	// User.prototype.pawRating = function(paws){
-	// 	var pawsArray = ["", " ", "  ", "   ", "    "];
-	// 	// console.log(pawsArray)
-	// 	// console.log(this.rating)
-	// 	pawsArray = pawsArray.filter(function(element, index){
-	// 		if(index<this.rating){
-	// 			return true
-	// 		}
-	// 	},this)
-	// 	// return pawsArray
-	// }
+<form class="pure-form pure-form-aligned">
+	    <fieldset>
+	        <div class="pure-control-group">
+	            <label for="name">Username</label>
+	            <input id="name" type="text" placeholder="Username">
+	        </div>
 
-	/*
-.catHeader1 {
-  color: #fff;
-  height: 176px;
-  background: url('./images/cat2.jpg') center / cover;
-}
+	        <div class="pure-control-group">
+	            <label for="password">Password</label>
+	            <input id="password" type="password" placeholder="Password">
+	        </div>
 
-.dogHeader2 {
-  color: #fff;
-  height: 176px;
-  background: url('./images/dog7.jpg') center / cover;*/
+	        <div class="pure-control-group">
+	            <label for="email">Email Address</label>
+	            <input id="email" type="email" placeholder="Email Address">
+	        </div>
 
-  /*.data-lightbox{
-  height:200px;
-  width: 200px;
-}*/
+	        <div class="pure-control-group">
+	            <label for="foo">zipcode</label>
+	            <input id="foo" type="text" placeholder="Enter something here...">
+	        </div>
+
+	        <div class="pure-controls">
+	            <label for="cb" class="pure-checkbox">
+	                <input id="cb" type="checkbox"> I've read the terms and conditions
+	            </label>
+
+	            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+
+	            <div> 
+	            	<h6>Sign in with: </h6>
+					<i class="icon icon-twitter icon-lg"></i> 
+					<i class="icon icon-facebook-square icon-lg"></i> 
+					<i class="icon icon-google-plus-square icon-lg"></i> 
+				</div>
+	    		</div>
+	    </fieldset>
+</form>
+
+ <footer class="mdl-mini-footer mainFooter">
+	  <div class="mdl-mini-footer__left-section">
+	    <div class="mdl-logo">Tail</div>
+	    <ul class="mdl-mini-footer__link-list">
+	      <li><a href="#">Help</a></li>
+	      <li><a href="#">Profiles</a></li>
+	      <li><a href="#">Connect</a></li>
+	    </ul>
+	  </div>
+	  			<div> 
+					<i class="icon icon-twitter icon-2x"></i> 
+					<i class="icon icon-facebook-square icon-2x"></i> 
+					<i class="icon icon-google-plus-square icon-2x"></i> 
+				</div>
+</footer>
 
 
 
-	  		
+<!--   	// <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+	<script type="text/javascript" src="angular-material-design-lite.min.js"></script>
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+ 	<script src="main.js"></script>

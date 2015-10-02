@@ -1,6 +1,20 @@
 
 angular.module('petApp', ['mdl', 'ngAnimate']);
 
+
+		var map;
+		function initMap() {
+   
+    			var mapOptions = {
+        			zoom: 14,
+        			center: new google.maps.LatLng(40.018005,-105.278430),
+    			}
+
+   				map = new google.maps.Map(document.getElementById('map'),mapOptions);
+   		}
+
+
+
 angular.module('petApp').factory('userGen', [function (){
 	var usersList = []
 
@@ -24,6 +38,7 @@ angular.module('petApp').factory('userGen', [function (){
 	new User('Leo',"Hi! My name is Leo! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am!",'non-furry','./images/crab1.jpg', "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 	new User('Lily',"Hi! My name is Lily! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am!",'cat','./images/cat1.jpg', "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 	new User('Scratch',"Hi! My name is Scratch! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am!",'cat','./images/cat2.jpg', "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+		new User('Timmy and Bailey',"Hi! We're Timmy and Bailey! My owner made this page for me, because I'm AWESOME! Come check out my profile for yourself and see how awesome I am!",'friends','./images/catdog2.jpg', "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 				
 
 	return {
@@ -72,10 +87,10 @@ angular.module('petApp').controller('mainController', ['$scope','userGen','$time
 		// $scope.selectedAnimalText= $scope.usersList[$index].tagLine
 		$scope.names = $scope.usersList[$index].name
 		$scope.bio = $scope.usersList[$index].bio
-		console.log($scope.usersList[$index].bio)
-		console.log($scope.usersList[$index])
-		// $scope.selectedAnimalFoto = $scope.usersList[$index].foto
 		$scope.showLightboxForm = !$scope.showLightboxForm;
+		// console.log($scope.usersList[$index].bio)
+		// console.log($scope.usersList[$index])
+		// $scope.selectedAnimalFoto = $scope.usersList[$index].foto
 		// console.log($scope.selectedAnimalText)
 	}
 
@@ -84,14 +99,30 @@ angular.module('petApp').controller('mainController', ['$scope','userGen','$time
 		$scope.showLightboxForm = !$scope.showLightboxForm;
 	} 
 
-	$scope.showintroLandingPage = function($index){
-		$scope.showIntro = true;
-	}
+	// $scope.showintroLandingPage = function($index){
+	// 	$scope.showIntro = true;
+	// }
 
 	$scope.toggleintroLandingPage = function(){
 		$scope.showIntro = false;
+
 	}
-		$scope.showIntro = true;
+	$scope.showIntro = true;
+
+
+// -------------------------
+	$scope.sign = function($index){
+
+		$scope.showSide = !scope.showSide;
+	}
+
+	$scope.signOut = function($index){ 
+			$scope.showSide = !scope.showSide;
+	} 
+
+
+		
+
 }])
 
 

@@ -20,21 +20,15 @@
 	
 }
 
-
 .demo-card-wide.mdl-card {
   width: auto;
-  max-width: 750px;
-  min-width:100px;
+  max-width: 700px;
+  min-width:300px;
 }
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
 
-/*.dogHeader1{
-  color: #fff;
-  height: 176px;
-  background: url('./images/dog6.jpg') center / cover;
-}*/
 .generalHeader{
   color: #fff;
   height: 300px;
@@ -59,12 +53,6 @@
 
 }
 
-/*.popUpLightbox.ng-enter,
-.popUpLightbox.ng-move,
-.popUpLightbox.ng-leave {
-  transition: all 2s ease;
-}
-*/
 
 .lightbox-card-wide.mdl-card {
   width: 50%;
@@ -82,15 +70,16 @@
 }
 
 .mdl-cell.mdl-cell--2-col {
-  background-color: grey;
+ /* background-color: grey;*/
   height: auto;
   opacity: .5;
 }
 
-.mdl-cell.mdl-cell--4-col {
+.mdl-cell.mdl-cell--3-col {
   background-color: grey;
   height: auto;
-  opacity: .5;
+  opacity: .6;
+  border-radius: 10px;
 }
 
 .mdl-textfield__input{
@@ -110,11 +99,29 @@
   padding: 15px;
 }
 .logo2{
-  height:75px;
-  width: 75px;
+  height:95px;
+  width: 95px;
   padding: 10px;
 }
 
 .type{
   color: grey;  
+}
+
+
+.pure-form.pure-form-aligned{
+  height: 750px;
+  text-align: center;
+  padding: 100px;
+  background: url("./images/dog1.jpg") center / cover; 
+
+}
+
+h6{
+  font-style: bold;
+
+}
+#map{
+  height: 425px;
+  width: 425px;
 }
