@@ -76,9 +76,9 @@
 }
 
 .mdl-cell.mdl-cell--3-col {
-  background-color: grey;
+  background-color: rgba(128,128,128, .7);
   height: auto;
-  opacity: .6;
+ /* opacity: .7;*/
   border-radius: 10px;
 }
 
@@ -99,8 +99,8 @@
   padding: 15px;
 }
 .logo2{
-  height:95px;
-  width: 95px;
+  height:85px;
+  width: 85px;
   padding: 10px;
 }
 
@@ -119,9 +119,12 @@
 
 h6{
   font-style: bold;
+  color: white;
 
 }
 #map{
-  height: 425px;
-  width: 425px;
+  height: 430px;
+  width: 430px;
+  margin: auto;
+  top: 30px;
 }
