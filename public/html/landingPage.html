@@ -3,38 +3,40 @@
 <head>
   <meta charset="utf-8">
   <title>Extras</title>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
   	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.orange-light_blue.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   	<link href="lightbox2-master/dist/css/lightbox.css" rel="stylesheet">
   	<script src="https://use.fonticons.com/1729dfc4.js"></script>
   	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-  	<link rel="stylesheet" type="text/css" href="main.css">
+  	<link rel="stylesheet" type="text/css" href="../css/main.css">
 
  </head>
 
+ <body ng-controller="loginController">
 
-
-
-<form class="pure-form pure-form-aligned">
+<!-- 
+<h5>Please Sign In to Tail: </h5> -->
+<form class="pure-form pure-form-aligned" ng-Submit="createUser()">
 	    <fieldset>
 	        <div class="pure-control-group">
 	            <label for="name">Username</label>
-	            <input id="name" type="text" placeholder="Username">
+	            <input ng-model="newProfile.username" id="name" type="text" placeholder="Username">
 	        </div>
 
 	        <div class="pure-control-group">
 	            <label for="password">Password</label>
-	            <input id="password" type="password" placeholder="Password">
+	            <input ng-model="newProfile.password" id="password" type="password" placeholder="Password">
 	        </div>
 
 	        <div class="pure-control-group">
 	            <label for="email">Email Address</label>
-	            <input id="email" type="email" placeholder="Email Address">
+	            <input ng-model="newProfile.email" id="email" type="email" placeholder="Email Address">
 	        </div>
 
 	        <div class="pure-control-group">
 	            <label for="foo">zipcode</label>
-	            <input id="foo" type="text" placeholder="Enter something here...">
+	            <input ng-model="newProfile.zipcode" id="foo" type="text" placeholder="Enter 5-digit zipcode">
 	        </div>
 
 	        <div class="pure-controls">
@@ -45,7 +47,7 @@
 	            <button type="submit" class="pure-button pure-button-primary">Submit</button>
 
 	            <div> 
-	            	<h6>Sign in with: </h6>
+	            	<h6> Sign in with: </h6>
 					<i class="icon icon-twitter icon-lg"></i> 
 					<i class="icon icon-facebook-square icon-lg"></i> 
 					<i class="icon icon-google-plus-square icon-lg"></i> 
@@ -72,8 +74,10 @@
 
 
 
-<!--   	// <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
 	<script type="text/javascript" src="angular-material-design-lite.min.js"></script>
 	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
- 	<script src="main.js"></script>
+ 	<script src="../js/home.js"></script>
+
+
+ 	</body>
+ </html>

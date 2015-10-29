@@ -1,5 +1,5 @@
 .demo-layout-transparent {
-  background: url("./images/dog1.jpg") center / cover;  
+  background: url(../images/dog1.jpg) center / cover;  
   position: relative;
  /*opacity: .5;*/
 }
@@ -113,7 +113,7 @@
   height: 750px;
   text-align: center;
   padding: 100px;
-  background: url("./images/dog1.jpg") center / cover; 
+  background: url("../images/dog1.jpg") center / cover; 
 
 }
 
