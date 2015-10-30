@@ -1,4 +1,4 @@
-angular.module('petApp', ['mdl']);
+angular.module('petApp', []);
 
 // angular.module('petApp')
 // 	.controller('mainController', ['$scope', function($scope){
@@ -23,9 +23,11 @@ angular.module('petApp')
 		$scope.createUser = function(){
 			$http.post('/api/profile', $scope.newProfile)
 				.then(function(returnData){
-					console.log("does this create new profile?")
+					console.log("creates a new profile")
 				})
 		}
+
+
 
 		// $scope.grabUsername = function(){
 		// 	var username = "nameofProfile"

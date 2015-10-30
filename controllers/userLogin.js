@@ -1,6 +1,5 @@
 // Include our Model
 var Profile = require('../models/user')
-console.log(Profile)
 
 // Create a NEW User
 var createUser = function(req, res){
@@ -25,6 +24,9 @@ var createUser = function(req, res){
 	})
 
 	newProfile.save( function(err, doc){
+		console.log(err)
+		console.log(doc)
+
 		res.send(doc)
 	})
 

@@ -16,9 +16,13 @@
     "url": "https://github.com/mariastenquist/Pets/issues"
   },
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
+    "express-session": "^1.12.1",
     "mongoose": "^4.2.3",
-    "multer": "^1.1.0"
+    "multer": "^1.1.0",
+    "passport": "^0.3.0",
+    "passport-local": "^1.0.0"
   }
 }
