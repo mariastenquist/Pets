@@ -1,4 +1,3 @@
-// Requires \\
 var express = require('express');
 var bodyParser = require('body-parser');
 var multer  = require('multer');
@@ -7,13 +6,11 @@ var upload = multer({ dest: './public/images/avatars/' });
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/pets')
 
-/** Express Session Setup **/
 var session = require('express-session')
 var passport = require('passport');
 
 var passportConfig = require('./config/passport'); // Load in our passport configuration that decides how passport actually runs and authenticates
 
-// Create Express App Object \\
 var app = express();
 var User = require('./controllers/userLogin')
 
@@ -24,9 +21,6 @@ app.use(session({
   saveUninitialized: false
 }));
 
-// app.use(app.sessionMiddleware)
-
-// Hook in passport to the middleware chain
 app.use(passport.initialize());
 
 // Hook in the passport session management into the middleware chain.
@@ -38,10 +32,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 // Routes \\
 var authenticationController = require('./controllers/authentication');
-
 // Our get request for viewing the login page
 app.get('/auth/login', authenticationController.login);
 
@@ -59,23 +51,21 @@ app.get('/api/me', function(req, res){
   res.send(req.user)
 })
 
-
 app.post('/api/profile', User.createUser);
 
-// ***** IMPORTANT ***** //
-// By including this middleware (defined in our config/passport.js module.exports),
-// We can prevent unauthorized access to any route handler defined after this call
-// to .use()
-app.use(passportConfig.ensureAuthenticated);
+app.post('/api/updateUser', User.updateUser);
 
 
-app.get('/', function(req, res){
-  res.sendFile('/html/landingPage.html', {root : './public'})
+
+
+
+// app.get('/homepage', );
+
+
+app.get('/', passportConfig.ensureAuthenticated, function(req, res){
+  res.sendFile('/html/global.html', {root : './public'})
 });
-// app.get('/superSensitiveDataRoute')
-
-
- 
+// app.get('/superSensitiveDataRoute') 
 // Routes \\
 
 // app.get('/', function(req, res){
@@ -90,9 +80,7 @@ app.get('/', function(req, res){
 //   res.sendFile('/html/index.html', {root : './public'})
 // });
 
-//not sure if this route needs to be /auth/login?
-
-app.post('/api/profile/:id', upload.single('avatar'), User.editUser);
+// app.post('/api/profile/:id', upload.single('avatar'), User.editUser);
 
 // app.post('/profile', upload.single('avatar'), function (req, res, next) {
 //   // req.file is the `avatar` file
@@ -111,13 +99,11 @@ app.post('/api/profile/:id', upload.single('avatar'), User.editUser);
 //   })
 // })
 
-app.post('/test', upload.single('foo'), function(req, res){
-  console.log(req.file)
-  res.send('...')
-})
+// app.post('/test', upload.single('foo'), function(req, res){
+//   console.log(req.file)
+//   res.send('...')
+// })
 
-
-// Creating Server and Listening for Connections \\
 var port = 3000
 app.listen(port, function(){
   console.log('Server running on port ' + port);

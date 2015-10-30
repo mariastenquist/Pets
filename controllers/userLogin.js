@@ -20,30 +20,62 @@ var createUser = function(req, res){
 		profilePic			: req.body.profilePic,
 		ratings				: req.body.ratings,
 		reviews				: req.body.reviews.split(', '),
-		story				: req.body.reviews.split(', '),
+		story				: req.body.story.split(', '),
 	})
 
 	newProfile.save( function(err, doc){
 		console.log(err)
 		console.log(doc)
-
+		req.login(doc, function(err){
+			console.log(err)
+		})
 		res.send(doc)
 	})
 
 }
 
-var editUser = function(req, res){
-	Profile.update({_id : req.params.id}, req.body, function(err){
+var updateUser = function(req, res){
+	console.log('req.body', req.body);
+	console.log('reqUserID', req.body._id);
+	Profile.findOne({_id : req.body._id}, function(err, result){
+		console.log('result', result);
+		var userId = req.body._id;
+		Profile.findByIdAndUpdate(userId, req.body, function(err, updatedUser){
+			console.log('updatedUser working', updatedUser);
+			res.send(updatedUser);
 
-		res.send('this works!')
+		})
 
-	});
+	})
 
-}
+	}
+	// Profile.findOne
+
+
+// var editUser = function(req, res){
+// 	Profile.update({_id : req.params.id}, req.body, function(err){
+
+// 		res.send('this works!')
+
+// 	});
+
+// }
+
+// var editUser = function(req, res){
+// 	Profile.update({_id : req.params.id}, {$set: {profilePic : req.body.profilePic}}, function(err){
+
+// 		if(err){
+// 			res.send(err)
+// 		}
+// 		else
+// 			res.send('success!')
+// 	});
+
+// }
+
 
 module.exports = {
 	createUser : createUser,
-	editUser   : editUser
-	
+	updateUser : updateUser	
 }
 

@@ -108,23 +108,40 @@
   color: grey;  
 }
 
-
 .pure-form.pure-form-aligned{
   height: 750px;
   text-align: center;
   padding: 100px;
   background: url("../images/dog1.jpg") center / cover; 
-
+/*this is for the landing page login*/
 }
+.pure-form.pure-form-alignedTwo{
+  height: 750px;
+  text-align: center;
+  padding: 100px;
+  background: url("../images/trio.jpg") center / cover;
+}
+
+.pure-control-group{
+  padding: 15px;
+  text-align: center;
+}
+/*this is for the logged in edit user/
+
+
 
 h6{
   font-style: bold;
   color: white;
 
 }
-#map{
+
+h5{
+  color: green;
+}
+/*#map{
   height: 430px;
   width: 430px;
   margin: auto;
   top: 30px;
-}
+}*/

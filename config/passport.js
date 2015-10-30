@@ -1,17 +1,13 @@
 // First, we'll need passport...
 var passport = require('passport');
-
 // We also need the strategy defined by our 'passport-local' module.
 // Strategies are how passport abstracts the logic of working with
 // different login systems like Facebook or Twitter. You can also
 // use multiple strategies to support more auth types.
 var LocalStrategy = require('passport-local').Strategy;
-
 // Since we will be using the user model to control access and
 // persistence, we'll use that as well.
 var Profile = require('../models/user');
-
-
 // SERIALIZATION:
 //  This small subset of code will take a user object, used
 //  in our JS, and convert it into a small, unique, string
@@ -20,7 +16,6 @@ var Profile = require('../models/user');
 passport.serializeUser(function(user, done){
   done(null, user.id);
 });
-
 // DESERIALIZATION:
 //  Essentially the inverse of above. This will take a user
 //  id out of the session and convert it into an actual
@@ -31,14 +26,15 @@ passport.deserializeUser(function(id, done){
   });
 });
 
-
 // Here we define the strategy for our local authentication.
 // This will be utilized by passport whenever we reference it.
-var localStrategy = new LocalStrategy(function(username, password, done){
+var localStrategy = new LocalStrategy({
+    usernameField: 'email',
+  }, function(username, password, done){
 
   // Given a username and password, let's try to authenticate this user.
   // We start by seeing if the username exists in our DB
-  Profile.findOne({username: username}, function(err, user){
+  Profile.findOne({email: email}, function(err, user){
 
     // If there was an error, allow execution to move to the next middleware
     if(err) return done(err);
@@ -66,19 +62,16 @@ var localStrategy = new LocalStrategy(function(username, password, done){
     });
   });
 });
-
 // Passport needs to know about our strategy definition above, so
 // we hook that in here.
 passport.use(localStrategy);
-
-
 // We don't really need to export anything from this file, since just
 // including it is enough. However, this helpful middleware allows us
 // to block access to routes if the user isn't authenticated by redirecting
 // them to the login page. We'll see this used in app.js
 module.exports = {
   ensureAuthenticated: function(req, res, next){
-    console.log('ensureAuth runs fine!')
+    console.log('ensureAuthenticated runs fine!')
     console.log(req.isAuthenticated())
 
     // If the current user is logged in...
@@ -86,6 +79,8 @@ module.exports = {
 
       // Middleware allows the execution chain to continue.
       return next();
+      console.log(next)
+      //I want this to redirect to a new file: global.html.
 
     }
 

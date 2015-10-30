@@ -16,6 +16,7 @@ var performLogin = function(req, res, next, user){
   // Passport injects functionality into the express ecosystem,
   // so we are able to call req.login and pass the user we want
   // logged in.
+    console.log('login err? ', err)
   req.login(user, function(err){
     // If there was an error, allow execution to move to the next middleware
     if(err) return next(err);
@@ -77,6 +78,8 @@ var authenticationController = {
     // handler. By using "param," we can safely assume that this route will
     // work regardless of how the data is sent (post, get).
     // It is safer to send as post, however, because the actual data won't
+    console.log('here?')
+
     // show up in browser history.
     var user = new User({
       username: req.body.username,
@@ -92,7 +95,7 @@ var authenticationController = {
       // information. We can customize the printed message based on
       // the error mongoose encounters
       if(err) {
-
+        console.log(err)
         // If we encounter this error, the duplicate key error,
         // this means that one of our fields marked as "unique"
         // failed to validate on this object.
