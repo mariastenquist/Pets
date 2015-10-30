@@ -15,6 +15,7 @@ var passportConfig = require('./config/passport'); // Load in our passport confi
 
 // Create Express App Object \\
 var app = express();
+var User = require('./controllers/userLogin')
 
 // Session Setup
 app.use(session({
@@ -58,6 +59,9 @@ app.get('/api/me', function(req, res){
   res.send(req.user)
 })
 
+
+app.post('/api/profile', User.createUser);
+
 // ***** IMPORTANT ***** //
 // By including this middleware (defined in our config/passport.js module.exports),
 // We can prevent unauthorized access to any route handler defined after this call
@@ -73,7 +77,6 @@ app.get('/', function(req, res){
 
  
 // Routes \\
-var User = require('./controllers/userLogin')
 
 // app.get('/', function(req, res){
 // 	// res.send('Hello')
@@ -86,8 +89,6 @@ var User = require('./controllers/userLogin')
 // app.get('/animals', function(req, res){
 //   res.sendFile('/html/index.html', {root : './public'})
 // });
-
-app.post('/api/profile', User.createUser);
 
 //not sure if this route needs to be /auth/login?
 

@@ -78,12 +78,15 @@ passport.use(localStrategy);
 // them to the login page. We'll see this used in app.js
 module.exports = {
   ensureAuthenticated: function(req, res, next){
+    console.log('ensureAuth runs fine!')
+    console.log(req.isAuthenticated())
 
     // If the current user is logged in...
     if(req.isAuthenticated()){
 
       // Middleware allows the execution chain to continue.
       return next();
+
     }
 
     // If not, redirect to login
