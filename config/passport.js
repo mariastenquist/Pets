@@ -9,7 +9,7 @@ var LocalStrategy = require('passport-local').Strategy;
 
 // Since we will be using the user model to control access and
 // persistence, we'll use that as well.
-var User = require('../models/user');
+var Profile = require('../models/user');
 
 
 // SERIALIZATION:
@@ -26,7 +26,7 @@ passport.serializeUser(function(user, done){
 //  id out of the session and convert it into an actual
 //  user object.
 passport.deserializeUser(function(id, done){
-  User.findById(id, function(err, user){
+  Profile.findById(id, function(err, user){
     done(err, user);
   });
 });
@@ -38,7 +38,7 @@ var localStrategy = new LocalStrategy(function(username, password, done){
 
   // Given a username and password, let's try to authenticate this user.
   // We start by seeing if the username exists in our DB
-  User.findOne({username: username}, function(err, user){
+  Profile.findOne({username: username}, function(err, user){
 
     // If there was an error, allow execution to move to the next middleware
     if(err) return done(err);
