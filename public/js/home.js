@@ -8,6 +8,31 @@ angular.module('petApp', []);
 // 	}])
 
 angular.module('petApp')
+	.controller('mainController', ['$scope', '$http', function($scope, $http){
+		$scope.user = {};
+		// console.log('hello')
+		// 
+		$scope.editUser = function(){
+
+			$http.get('/api/me')
+				.then(function(returnData){
+					console.log(returnData)
+					$scope.user = returnData.data
+				})
+
+
+			console.log('this', this)
+			$http.post('/api/updateUser/', this.user)
+			.success(function(){
+				window.location.href="/";
+			})
+		}
+
+
+
+
+	}])
+
 	.controller('loginController', ['$scope', '$http', function($scope, $http){
 		$scope.temp = "this is working?"
 
@@ -31,23 +56,23 @@ angular.module('petApp')
 				})
 		}
 	}])
-	.controller('editController', ['$scope', '$http', function($scope, $http){
-		$scope.user = {};
-		// console.log('hello')
-		// 
-		$scope.editUser = function(){
-			console.log('this', this)
-			$http.post('/api/updateUser/', this.user)
-			.success(function(){
-				window.location.href="/";
-			})
-		}
+	// .controller('editController', ['$scope', '$http', function($scope, $http){
+	// 	$scope.user = {};
+	// 	// console.log('hello')
+	// 	// 
+	// 	$scope.editUser = function(){
+	// 		console.log('this', this)
+	// 		$http.post('/api/updateUser/', this.user)
+	// 		.success(function(){
+	// 			window.location.href="/";
+	// 		})
+	// 	}
 
-			$http.get('/api/me')
-				.then(function(returnData){
-					console.log(returnData)
-					$scope.user = returnData.data
-				})
+	// 		$http.get('/api/me')
+	// 			.then(function(returnData){
+	// 				console.log(returnData)
+	// 				$scope.user = returnData.data
+	// 			})
 
 
 		// $scope.user = function(){
@@ -63,4 +88,4 @@ angular.module('petApp')
 		// 		})
 		// }
 
-	}])
+	// }])

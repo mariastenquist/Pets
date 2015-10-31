@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="petApp">
+<head>
+  <meta charset="utf-8">
+  <title>TailHomepage</title>
+
+<!--   	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.orange-light_blue.min.css">
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+<!--     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> -->
+<!--   	<link href="../lightbox2-master/dist/css/lightbox.css" rel="stylesheet"> -->
+<!--   	// <script src="https://use.fonticons.com/1729dfc4.js"></script> -->
+
+<!-- 
+    <link rel="stylesheet" href="../css/animate.css"> -->
+  	<link rel="stylesheet" type="text/css" href="../css/main.css">
+      
+ <!--      error for angular material design liteand lightbox?
+ -->
+</head>
+
+<body ng-controller="mainController">
+
+	<h2>"hello world"</h2>
+
+
+    <div ng-view>
+      <!-- Our templates will be injected here -->
+    </div>
+
+<!-- 
+	      <nav class="mdl-navigation">
+	        <a class="mdl-navigation__link" href="">About</a>
+	        <a class="mdl-navigation__link" href="/editProfile">Edit Profiles</a>
+	        <a class="mdl-navigation__link" href="">Contact</a>
+	        <a class="mdl-navigation__link" href="">Sign In</a>
+	      </nav>
+ -->
+
+ 	<nav>
+ 		<a href="/editProfile">edit profile</a>
+ 	</nav>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
+    <script src="../js/home.js"></script>
+    <script type="text/javascript" src="../angular-material-design-lite.min.js"></script>
+
+</body>
+</html>
